@@ -1,19 +1,21 @@
-import { Profile } from './Profile/Profile';
-import user from './Profile/user.json'
-import { Statistics } from './Statistics/Statistics';
-import data from './Statistics/data.json'
-import { FriendList } from './FriendList/FriendList';
-import friends from './FriendList/friends.json'
-import { TransactionHistory } from './TransactionHistory/TransactionHistory';
-import transactions from './TransactionHistory/transactions.json'
+import { GlobalStyles } from './GlobalStyles';
+import { UserCard } from './usercard/UserCard';
+import { Statistics } from './statistics/Statistics';
+import { TransactionHistory } from './transactionHistory/TransactionHistory';
+import FriendList from './friends/friendsList';
+import User from '../../src/user.json';
+import Data from '../../src/data.json';
+import friends from '../../src/friends.json';
+import transactions from '../../src/transactions.json';
 
 export const App = () => {
   return (
     <div>
-      <Profile propsUser={user} />
-      <Statistics stats={data} />
+      <GlobalStyles />
+      <UserCard user={User} />
+      <Statistics title="Upload stats" stats={Data} />
       <FriendList friends={friends} />
-      <TransactionHistory items={transactions} />
+      <TransactionHistory transactions={transactions} />
     </div>
   );
 };
